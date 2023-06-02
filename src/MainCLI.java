@@ -1,44 +1,25 @@
 import Simulation1.Consumer;
 import Simulation1.Producer;
 import admin.Warehouse;
+import eventInfrastrukture.*;
+import eventListener.DeleteCargoListener;
+import eventListener.InfoListener;
+import eventListener.InsertCargoListener;
+import eventListener.ReadCargoListener;
 
+import java.util.EventObject;
 import java.util.Scanner;
 
 
-public class Main {
+public class MainCLI {
     public static void main(String[] args){
-       Warehouse model = null; 
-        
-            int input;
-            boolean notANumber = true;
-            String message = "How big is the capacity of the warehouse?";
-            try (Scanner s = new Scanner(System.in)) {
-                do {
-                    System.out.println(message);
-                    try
-                    {
-                        input = Integer.parseInt(s.nextLine());
-                        model = new Warehouse(input); 
-                        notANumber = false;
-                    }
-                    catch (NumberFormatException e)
-                    {
-                        message = "This was not a Number. Please try again to insert the capacity: ";
-                    }
-                }while (notANumber);
-            }
-        
 
-        new Producer(model).start();
-        new Consumer(model).start();
-
-
-        //  Warehouse model = new Warehouse();
-        // CLI console = new CLI(model);
+       Warehouse model = new Warehouse();
+       CLI console = new CLI(model);
         
         
-      /*  GenericEventHandler <InsertCargoEvent> insertCargoHandler = new GenericEventHandler <>();
-        GenericEventListener <InsertCargoEvent> insertListener = new InsertCargoListener(model);
+     GenericEventHandler <InsertCargoEvent> insertCargoHandler = new GenericEventHandler<>();
+        GenericEventListener<InsertCargoEvent> insertListener = new InsertCargoListener(model);
         insertCargoHandler.add(insertListener);
         console.setInsertCargoHandler(insertCargoHandler);
         //TODO soll InsertCargoEvent aufgelöst werden in ein GenericEvent, das ein Objekt entgegen nimmt
@@ -65,7 +46,7 @@ public class Main {
         ((ReadCargoListener) readCargoListener).setOutputHandler(outputHandler);
         //TODO Problem, dass readCargoListener GenericEventListener ist und dort keine Methode setOutputHandler
         //doch ReadEventListener benutzen?
-        */
+
 
 
      /*   CapacityObserver o1=new CapacityObserver(model);
