@@ -1,34 +1,72 @@
-import Observer.CapacityObserver;
+import Simulation1.Consumer;
+import Simulation1.Producer;
 import admin.Warehouse;
-import infrastrukture.*;
-import listener.DeleteCargoListener;
-import listener.InsertCargoListener;
-import listener.ReadCargoListener;
+
+import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args){
+       Warehouse model = null; 
+        
+            int input;
+            boolean notANumber = true;
+            String message = "How big is the capacity of the warehouse?";
+            try (Scanner s = new Scanner(System.in)) {
+                do {
+                    System.out.println(message);
+                    try
+                    {
+                        input = Integer.parseInt(s.nextLine());
+                        model = new Warehouse(input); 
+                        notANumber = false;
+                    }
+                    catch (NumberFormatException e)
+                    {
+                        message = "This was not a Number. Please try again to insert the capacity: ";
+                    }
+                }while (notANumber);
+            }
+        
 
-        Warehouse model = new Warehouse();
-        CLI console = new CLI(model);
+        new Producer(model).start();
+        new Consumer(model).start();
 
-        InsertCargoEventHandler insertCargoHandler = new InsertCargoEventHandler();
-        InsertCargoListener insertListener = new InsertCargoListener(model);
+
+        //  Warehouse model = new Warehouse();
+        // CLI console = new CLI(model);
+        
+        
+      /*  GenericEventHandler <InsertCargoEvent> insertCargoHandler = new GenericEventHandler <>();
+        GenericEventListener <InsertCargoEvent> insertListener = new InsertCargoListener(model);
         insertCargoHandler.add(insertListener);
         console.setInsertCargoHandler(insertCargoHandler);
+        //TODO soll InsertCargoEvent aufgelöst werden in ein GenericEvent, das ein Objekt entgegen nimmt
 
-        NumberEventHandler deleteCargoHandler = new NumberEventHandler();
-        DeleteCargoListener deleteListener = new DeleteCargoListener(model);
+        GenericEventHandler <NumberEvent> deleteCargoHandler = new GenericEventHandler<>();
+        GenericEventListener <NumberEvent>  deleteListener = new DeleteCargoListener(model);
         deleteCargoHandler.add(deleteListener);
         console.setDeleteCargoHandler(deleteCargoHandler);
 
-        NumberEventHandler updateCargoHandler = new NumberEventHandler();
-        DeleteCargoListener updateListener = new DeleteCargoListener(model);
+        GenericEventHandler <NumberEvent> updateCargoHandler = new GenericEventHandler<>();
+        GenericEventListener <NumberEvent>  updateListener = new DeleteCargoListener(model);
         updateCargoHandler.add(updateListener);
         console.setUpdateCargoHandler(updateCargoHandler);
 
-        ReadEventHandler readEventHandler = new ReadEventHandler();
-        ReadCargoListener readCargoListener = new ReadCargoListener(model);
+        GenericEventHandler<EventObject> readEventHandler = new GenericEventHandler<>();
+        GenericEventListener<EventObject> readCargoListener = new ReadCargoListener(model);
         readEventHandler.add(readCargoListener);
+        console.setReadHandler(readEventHandler);
+        //TODO bei ReadHandler einfach EventObject reinschreiben?
+
+        GenericEventHandler <StringEvent> outputHandler = new GenericEventHandler<>();
+        GenericEventListener <StringEvent> infoListener = new InfoListener();
+        outputHandler.add(infoListener);
+        ((ReadCargoListener) readCargoListener).setOutputHandler(outputHandler);
+        //TODO Problem, dass readCargoListener GenericEventListener ist und dort keine Methode setOutputHandler
+        //doch ReadEventListener benutzen?
+        */
+
 
      /*   CapacityObserver o1=new CapacityObserver(model);
         model.addObserver(o1);
@@ -36,7 +74,8 @@ public class Main {
         model.addObserver(o2); */
 
 
-        console.execute();
+       // console.execute();
 
     }
+
 }

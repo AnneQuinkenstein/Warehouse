@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Observer/Observer.iml" filepath="$PROJECT_DIR$/Observer/Observer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UI/UI.iml" filepath="$PROJECT_DIR$/UI/UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/belegProg3.iml" filepath="$PROJECT_DIR$/belegProg3.iml" />
       <module fileurl="file://$PROJECT_DIR$/userInterface/cLI.iml" filepath="$PROJECT_DIR$/userInterface/cLI.iml" />
       <module fileurl="file://$PROJECT_DIR$/contract/contract.iml" filepath="$PROJECT_DIR$/contract/contract.iml" />
       <module fileurl="file://$PROJECT_DIR$/domainLogic/domainLogic.iml" filepath="$PROJECT_DIR$/domainLogic/domainLogic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/eventsystem/eventsystem.iml" filepath="$PROJECT_DIR$/eventsystem/eventsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inversionOfControl/inversionOfControl.iml" filepath="$PROJECT_DIR$/inversionOfControl/inversionOfControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simulation/simulation.iml" filepath="$PROJECT_DIR$/simulation/simulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinterface/userinterface.iml" filepath="$PROJECT_DIR$/userinterface/userinterface.iml" />
     </modules>
   </component>
 </project>

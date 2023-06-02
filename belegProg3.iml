@@ -10,8 +10,8 @@
     <orderEntry type="module" module-name="domainLogic" />
     <orderEntry type="module" module-name="cLI" />
     <orderEntry type="library" name="mockito.core" level="project" />
-    <orderEntry type="module" module-name="Observer" />
-    <orderEntry type="module" module-name="UI" />
-    <orderEntry type="module" module-name="eventsystem" />
+    <orderEntry type="module" module-name="simulation" />
+    <orderEntry type="module" module-name="userinterface" />
+    <orderEntry type="module" module-name="inversionOfControl" />
   </component>
 </module>

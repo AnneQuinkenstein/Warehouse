@@ -35,7 +35,7 @@ Ergänzende Anmerkungen bitte immer _kursiv_ setzen. Andere Änderungen sind nic
 - [ ] **CRUD** (2)
 - [ ] **CLI** (2)
   * Syntax gemäß Anforderungen
-- [ ] **Simulation** (2)
+- [ ] **Simulation1.Simulation1** (2)
   * ohne race conditions
 - [ ] **GUI** (2)
 - [ ] **I/O** (2)
@@ -53,8 +53,8 @@ Ergänzende Anmerkungen bitte immer _kursiv_ setzen. Andere Änderungen sind nic
 - [ ] ausdifferenziertes event-System mit mindestens 3 events (2)
 - [ ] observer oder property change propagation (2)
 - [ ] angemessene Aufzählungstypen (2)
-- [ ] Simulation 2 (1)
-- [ ] Simulation 3 (1)
+- [ ] Simulation1.Simulation1 2 (1)
+- [ ] Simulation1.Simulation1 3 (1)
 - [ ] data binding verwendet (1)
 - [ ] Änderung der Fachnummer mittels drag&drop (1)
 - [ ] Einfügen von Kuchen via GUI sperrt nicht (1)

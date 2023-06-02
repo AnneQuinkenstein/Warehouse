@@ -71,4 +71,10 @@ public abstract class CargoAbstr implements Storable, Cargo {
     public Date getInputDate() {
         return inputDate;
     }
+
+    @Override
+    public String toString(){
+        String s = String.format("Cargo: StorageLocation: ; Owner: , Value: %s, Hazards: ", this.getValue(), this.hazards);
+        return s;
+    }
 }

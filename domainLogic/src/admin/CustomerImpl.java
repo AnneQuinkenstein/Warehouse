@@ -20,5 +20,9 @@ public class CustomerImpl implements Customer {
         CustomerImpl that = (CustomerImpl) o;
         return name.equals(that.name);
     }
+    @Override
+    public int hashCode(){
+        return name.hashCode();
+    }
 
 }

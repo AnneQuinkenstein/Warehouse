@@ -2,7 +2,6 @@ package admin;
 
 public enum Cargotype {
     DRYBULKCARGO,
-    LIQUIDBULDCARGO,
-    UNITISEDCARGO
+    LIQUIDBULDCARGO
 
 }
