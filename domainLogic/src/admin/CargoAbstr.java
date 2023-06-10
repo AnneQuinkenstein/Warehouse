@@ -18,13 +18,13 @@ public abstract class CargoAbstr implements Storable, Cargo {
     protected Collection<Hazard> hazards;
 
     protected Date inputDate;
-    protected String ownerName;
+    protected Customer owner;
     protected int storageLocation;
 
-    public CargoAbstr(String customer, BigDecimal value, List<Hazard> hazards){
+    public CargoAbstr(Customer owner, BigDecimal value, List<Hazard> hazards){
          this.value = value;
          this.hazards = hazards;
-         this.ownerName = customer;
+         this.owner= owner;
          this.inputDate = new Date();
     }
 
@@ -39,8 +39,7 @@ public abstract class CargoAbstr implements Storable, Cargo {
 
     @Override
     public Customer getOwner() {
-        throw new UnsupportedOperationException("not yet implemented");
-        //aus Liste Owner raussuchen, wenn nicht drin
+          return this.owner;
     }
 
     @Override
@@ -76,5 +75,9 @@ public abstract class CargoAbstr implements Storable, Cargo {
     public String toString(){
         String s = String.format("Cargo: StorageLocation: ; Owner: , Value: %s, Hazards: ", this.getValue(), this.hazards);
         return s;
+    }
+
+    public void setOwner(Customer owner) {
+         this.owner = owner;
     }
 }

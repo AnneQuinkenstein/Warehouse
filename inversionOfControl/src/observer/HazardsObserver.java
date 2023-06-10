@@ -16,7 +16,7 @@ public class HazardsObserver implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-
+      //TODO: Zweite über Änderungen an den vorhandenen Gefahrenstoffen informieren.
        //Check ob Hazards dazugekommen sind 
     }
 }

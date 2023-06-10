@@ -1,6 +1,6 @@
 package admin;
 
-import admin.CargoAbstr;
+import administration.Customer;
 import cargo.Hazard;
 import cargo.LiquidBulkCargo;
 
@@ -10,8 +10,8 @@ import java.util.List;
 public class LiquidBulkCargoImpl extends CargoAbstr implements LiquidBulkCargo {
     private boolean pressurized;
 
-    public LiquidBulkCargoImpl(String customer, BigDecimal value, List<Hazard> hazards, boolean characteristics){
-        super(customer, value, hazards);
+    public LiquidBulkCargoImpl(Customer owner, BigDecimal value, List<Hazard> hazards, boolean characteristics){
+        super(owner, value, hazards);
         this.pressurized = characteristics;
     }
     @Override
